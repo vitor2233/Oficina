@@ -19,21 +19,29 @@ namespace Oficina
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
+            panelSide.Height = btnCliente.Height;
+            panelSide.Top = btnCliente.Top;
             clienteControl.BringToFront();
         }
 
         private void btnCarro_Click(object sender, EventArgs e)
         {
+            panelSide.Height = btnCarro.Height;
+            panelSide.Top = btnCarro.Top;
             carroControl.BringToFront();
         }
 
         private void btnOrcamento_Click(object sender, EventArgs e)
         {
+            panelSide.Height = btnOrcamento.Height;
+            panelSide.Top = btnOrcamento.Top;
             orcamentoControl.BringToFront();
         }
 
         private void btnPagamento_Click(object sender, EventArgs e)
         {
+            panelSide.Height = btnPagamento.Height;
+            panelSide.Top = btnPagamento.Top;
             pagamentoControl.BringToFront();
         }
     }

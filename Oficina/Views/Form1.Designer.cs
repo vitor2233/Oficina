@@ -34,6 +34,7 @@
             this.btnCarro = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.panelSide = new System.Windows.Forms.Panel();
             this.pagamentoControl = new Oficina.Views.pagamentoControl();
             this.orcamentoControl = new Oficina.Views.orcamentoControl();
             this.clienteControl = new Oficina.Views.clienteControl();
@@ -44,6 +45,7 @@
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.sidePanel.Controls.Add(this.panelSide);
             this.sidePanel.Controls.Add(this.btnPagamento);
             this.sidePanel.Controls.Add(this.btnOrcamento);
             this.sidePanel.Controls.Add(this.btnCarro);
@@ -76,7 +78,7 @@
             this.btnOrcamento.Name = "btnOrcamento";
             this.btnOrcamento.Size = new System.Drawing.Size(170, 49);
             this.btnOrcamento.TabIndex = 4;
-            this.btnOrcamento.Text = "ORÇAMENTOS";
+            this.btnOrcamento.Text = "SERVIÇOS";
             this.btnOrcamento.UseVisualStyleBackColor = true;
             this.btnOrcamento.Click += new System.EventHandler(this.btnOrcamento_Click);
             // 
@@ -114,6 +116,14 @@
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(707, 22);
             this.headerPanel.TabIndex = 1;
+            // 
+            // panelSide
+            // 
+            this.panelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(48)))), ((int)(((byte)(0)))));
+            this.panelSide.Location = new System.Drawing.Point(0, 94);
+            this.panelSide.Name = "panelSide";
+            this.panelSide.Size = new System.Drawing.Size(10, 49);
+            this.panelSide.TabIndex = 6;
             // 
             // pagamentoControl
             // 
@@ -175,6 +185,7 @@
         private Views.clienteControl clienteControl;
         private Views.orcamentoControl orcamentoControl;
         private Views.pagamentoControl pagamentoControl;
+        private System.Windows.Forms.Panel panelSide;
     }
 }
 
