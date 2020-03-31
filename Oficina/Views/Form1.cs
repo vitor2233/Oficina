@@ -17,30 +17,30 @@ namespace Oficina
             InitializeComponent();
         }
 
-        private void btnCliente_Click(object sender, EventArgs e)
+        private void btnCliente_Click_1(object sender, EventArgs e)
         {
-            panelSide.Height = btnCliente.Height;
+            panelSide.Height = btnCliente.Height - 1;
             panelSide.Top = btnCliente.Top;
             clienteControl.BringToFront();
         }
 
-        private void btnCarro_Click(object sender, EventArgs e)
+        private void btnCarro_Click_1(object sender, EventArgs e)
         {
-            panelSide.Height = btnCarro.Height;
+            panelSide.Height = btnCarro.Height - 1;
             panelSide.Top = btnCarro.Top;
             carroControl.BringToFront();
         }
 
-        private void btnOrcamento_Click(object sender, EventArgs e)
+        private void btnOrcamento_Click_1(object sender, EventArgs e)
         {
-            panelSide.Height = btnOrcamento.Height;
+            panelSide.Height = btnOrcamento.Height - 1;
             panelSide.Top = btnOrcamento.Top;
             orcamentoControl.BringToFront();
         }
 
-        private void btnPagamento_Click(object sender, EventArgs e)
+        private void btnPagamento_Click_1(object sender, EventArgs e)
         {
-            panelSide.Height = btnPagamento.Height;
+            panelSide.Height = btnPagamento.Height - 1;
             panelSide.Top = btnPagamento.Top;
             pagamentoControl.BringToFront();
         }

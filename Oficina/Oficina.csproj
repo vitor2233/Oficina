@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\Users\Vitor\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AcessoController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Views\carroControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\carroControl.resx">
       <DependentUpon>carroControl.cs</DependentUpon>
@@ -116,6 +122,32 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Src\ponto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\circulo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\circulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\apoio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\do-utilizador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\do-utilizador %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\pickup-car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\lista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\carteira.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
