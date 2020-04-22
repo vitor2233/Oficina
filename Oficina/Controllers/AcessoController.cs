@@ -8,8 +8,6 @@ namespace Oficina.Controllers
     class AcessoController
     {
 
-        //2º Passo: Criação dos Objetos
-
         //Responsável pela conexão com o bd
         private SqlConnection con;
 
@@ -22,8 +20,6 @@ namespace Oficina.Controllers
         //Reponsável por retornar o resultado de um select
         private DataTable dt;
 
-
-        //3º Passo: Definindo os parâmetros para 
         //criar string de conexão 
         private string server = @"(localdb)\MSSQLLocalDB";// nome do servidor sqlServer
         private string database = "dbOficina"; //nome do database

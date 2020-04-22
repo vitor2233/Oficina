@@ -28,45 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtBairro = new System.Windows.Forms.TextBox();
-            this.txtRua = new System.Windows.Forms.TextBox();
-            this.mskCpf = new System.Windows.Forms.MaskedTextBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblPlaca = new System.Windows.Forms.Label();
             this.lblModelo = new System.Windows.Forms.Label();
             this.lblChassi = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtMarca = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtModelo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtPlaca = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtChassi = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.SuspendLayout();
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(78, 92);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(209, 20);
-            this.txtNome.TabIndex = 0;
-            // 
-            // txtBairro
-            // 
-            this.txtBairro.Location = new System.Drawing.Point(464, 95);
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(222, 20);
-            this.txtBairro.TabIndex = 3;
-            // 
-            // txtRua
-            // 
-            this.txtRua.Location = new System.Drawing.Point(464, 148);
-            this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(222, 20);
-            this.txtRua.TabIndex = 7;
-            // 
-            // mskCpf
-            // 
-            this.mskCpf.Location = new System.Drawing.Point(78, 145);
-            this.mskCpf.Name = "mskCpf";
-            this.mskCpf.Size = new System.Drawing.Size(209, 20);
-            this.mskCpf.TabIndex = 8;
             // 
             // lblMarca
             // 
@@ -113,27 +85,115 @@
             this.lblCliente.TabIndex = 16;
             this.lblCliente.Text = "CLIENTE:";
             // 
+            // txtMarca
+            // 
+            this.txtMarca.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMarca.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMarca.HintForeColor = System.Drawing.Color.Empty;
+            this.txtMarca.HintText = "";
+            this.txtMarca.isPassword = false;
+            this.txtMarca.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.txtMarca.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtMarca.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.txtMarca.LineThickness = 3;
+            this.txtMarca.Location = new System.Drawing.Point(78, 90);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(209, 21);
+            this.txtMarca.TabIndex = 41;
+            this.txtMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtModelo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtModelo.HintForeColor = System.Drawing.Color.Empty;
+            this.txtModelo.HintText = "";
+            this.txtModelo.isPassword = false;
+            this.txtModelo.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.txtModelo.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtModelo.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.txtModelo.LineThickness = 3;
+            this.txtModelo.Location = new System.Drawing.Point(464, 90);
+            this.txtModelo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(209, 21);
+            this.txtModelo.TabIndex = 42;
+            this.txtModelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtPlaca
+            // 
+            this.txtPlaca.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPlaca.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtPlaca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPlaca.HintForeColor = System.Drawing.Color.Empty;
+            this.txtPlaca.HintText = "";
+            this.txtPlaca.isPassword = false;
+            this.txtPlaca.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.txtPlaca.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtPlaca.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.txtPlaca.LineThickness = 3;
+            this.txtPlaca.Location = new System.Drawing.Point(78, 143);
+            this.txtPlaca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(209, 21);
+            this.txtPlaca.TabIndex = 43;
+            this.txtPlaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtChassi
+            // 
+            this.txtChassi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtChassi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtChassi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtChassi.HintForeColor = System.Drawing.Color.Empty;
+            this.txtChassi.HintText = "";
+            this.txtChassi.isPassword = false;
+            this.txtChassi.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.txtChassi.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtChassi.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.txtChassi.LineThickness = 3;
+            this.txtChassi.Location = new System.Drawing.Point(464, 151);
+            this.txtChassi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtChassi.Name = "txtChassi";
+            this.txtChassi.Size = new System.Drawing.Size(209, 21);
+            this.txtChassi.TabIndex = 44;
+            this.txtChassi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(260, 35);
+            this.txtCliente.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCliente.HintForeColor = System.Drawing.Color.Empty;
+            this.txtCliente.HintText = "";
+            this.txtCliente.isPassword = false;
+            this.txtCliente.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.txtCliente.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtCliente.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.txtCliente.LineThickness = 3;
+            this.txtCliente.Location = new System.Drawing.Point(261, 30);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(209, 20);
-            this.txtCliente.TabIndex = 15;
+            this.txtCliente.Size = new System.Drawing.Size(209, 21);
+            this.txtCliente.TabIndex = 45;
+            this.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // carroControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.txtCliente);
+            this.Controls.Add(this.txtChassi);
+            this.Controls.Add(this.txtPlaca);
+            this.Controls.Add(this.txtModelo);
+            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.lblChassi);
             this.Controls.Add(this.lblModelo);
             this.Controls.Add(this.lblPlaca);
             this.Controls.Add(this.lblMarca);
-            this.Controls.Add(this.mskCpf);
-            this.Controls.Add(this.txtRua);
-            this.Controls.Add(this.txtBairro);
-            this.Controls.Add(this.txtNome);
             this.Name = "carroControl";
             this.Size = new System.Drawing.Size(707, 497);
             this.ResumeLayout(false);
@@ -142,16 +202,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtBairro;
-        private System.Windows.Forms.TextBox txtRua;
-        private System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblPlaca;
         private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.Label lblChassi;
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.TextBox txtCliente;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtMarca;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtModelo;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtPlaca;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtChassi;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtCliente;
     }
 }

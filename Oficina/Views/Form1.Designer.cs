@@ -30,15 +30,16 @@
         {
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panelSide = new System.Windows.Forms.Panel();
-            this.headerPanel = new System.Windows.Forms.Panel();
             this.btnPagamento = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnOrcamento = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCarro = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCliente = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.headerPanel = new System.Windows.Forms.Panel();
             this.pagamentoControl = new Oficina.Views.pagamentoControl();
             this.orcamentoControl = new Oficina.Views.orcamentoControl();
             this.clienteControl = new Oficina.Views.clienteControl();
             this.carroControl = new Oficina.Views.carroControl();
+            this.bemVindoControl1 = new Oficina.Views.bemVindoControl();
             this.sidePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,15 +64,6 @@
             this.panelSide.Name = "panelSide";
             this.panelSide.Size = new System.Drawing.Size(10, 49);
             this.panelSide.TabIndex = 6;
-            // 
-            // headerPanel
-            // 
-            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerPanel.Location = new System.Drawing.Point(170, 0);
-            this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(707, 22);
-            this.headerPanel.TabIndex = 1;
             // 
             // btnPagamento
             // 
@@ -114,7 +106,7 @@
             this.btnOrcamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
             this.btnOrcamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOrcamento.BorderRadius = 0;
-            this.btnOrcamento.ButtonText = "ORÇAMENTO";
+            this.btnOrcamento.ButtonText = "SERVIÇOS";
             this.btnOrcamento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOrcamento.DisabledColor = System.Drawing.Color.Gray;
             this.btnOrcamento.Iconcolor = System.Drawing.Color.Transparent;
@@ -137,7 +129,7 @@
             this.btnOrcamento.selected = false;
             this.btnOrcamento.Size = new System.Drawing.Size(170, 49);
             this.btnOrcamento.TabIndex = 9;
-            this.btnOrcamento.Text = "ORÇAMENTO";
+            this.btnOrcamento.Text = "SERVIÇOS";
             this.btnOrcamento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrcamento.Textcolor = System.Drawing.Color.White;
             this.btnOrcamento.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,6 +205,15 @@
             this.btnCliente.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click_1);
             // 
+            // headerPanel
+            // 
+            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPanel.Location = new System.Drawing.Point(170, 0);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(707, 22);
+            this.headerPanel.TabIndex = 1;
+            // 
             // pagamentoControl
             // 
             this.pagamentoControl.Location = new System.Drawing.Point(170, 22);
@@ -241,11 +242,19 @@
             this.carroControl.Size = new System.Drawing.Size(707, 497);
             this.carroControl.TabIndex = 2;
             // 
+            // bemVindoControl1
+            // 
+            this.bemVindoControl1.Location = new System.Drawing.Point(170, 22);
+            this.bemVindoControl1.Name = "bemVindoControl1";
+            this.bemVindoControl1.Size = new System.Drawing.Size(707, 497);
+            this.bemVindoControl1.TabIndex = 6;
+            // 
             // FormOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 519);
+            this.Controls.Add(this.bemVindoControl1);
             this.Controls.Add(this.pagamentoControl);
             this.Controls.Add(this.orcamentoControl);
             this.Controls.Add(this.clienteControl);
@@ -274,6 +283,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnCarro;
         private Bunifu.Framework.UI.BunifuFlatButton btnPagamento;
         private Bunifu.Framework.UI.BunifuFlatButton btnOrcamento;
+        private Views.bemVindoControl bemVindoControl1;
     }
 }
 

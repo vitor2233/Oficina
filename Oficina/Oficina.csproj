@@ -52,6 +52,13 @@
   <ItemGroup>
     <Compile Include="Controllers\AcessoController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Views\bemVindoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\bemVindoControl.Designer.cs">
+      <DependentUpon>bemVindoControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\carroControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +79,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\orcamentoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,6 +107,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\bemVindoControl.resx">
+      <DependentUpon>bemVindoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\carroControl.resx">
       <DependentUpon>carroControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\orcamentoControl.resx">
       <DependentUpon>orcamentoControl.cs</DependentUpon>
