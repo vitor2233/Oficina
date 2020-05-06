@@ -44,5 +44,10 @@ namespace Oficina
             panelSide.Top = btnPagamento.Top;
             pagamentoControl.BringToFront();
         }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

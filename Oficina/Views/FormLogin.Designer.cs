@@ -37,11 +37,14 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.headerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.headerPanel.Controls.Add(this.panel2);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.headerPanel.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -140,6 +143,19 @@
             this.panel1.Size = new System.Drawing.Size(133, 129);
             this.panel1.TabIndex = 47;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Location = new System.Drawing.Point(354, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(32, 22);
+            this.panel2.TabIndex = 48;
+            this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +173,7 @@
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
+            this.headerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +189,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

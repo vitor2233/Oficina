@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOficina));
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panelSide = new System.Windows.Forms.Panel();
             this.btnPagamento = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -40,7 +41,9 @@
             this.clienteControl = new Oficina.Views.clienteControl();
             this.carroControl = new Oficina.Views.carroControl();
             this.bemVindoControl1 = new Oficina.Views.bemVindoControl();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.sidePanel.SuspendLayout();
+            this.headerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -208,6 +211,7 @@
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            this.headerPanel.Controls.Add(this.panel2);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(170, 0);
             this.headerPanel.Name = "headerPanel";
@@ -249,6 +253,19 @@
             this.bemVindoControl1.Size = new System.Drawing.Size(707, 497);
             this.bemVindoControl1.TabIndex = 6;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Location = new System.Drawing.Point(675, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(32, 22);
+            this.panel2.TabIndex = 49;
+            this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            // 
             // FormOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +283,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormOficina";
             this.sidePanel.ResumeLayout(false);
+            this.headerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -284,6 +302,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnPagamento;
         private Bunifu.Framework.UI.BunifuFlatButton btnOrcamento;
         private Views.bemVindoControl bemVindoControl1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

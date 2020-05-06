@@ -27,8 +27,6 @@ namespace Oficina.Controllers
 
         public string Complemento { get; set; }
 
-        int codClienteclicado = 0;
-
         AcessoController bd = new AcessoController();
 
         public bool Insert()
@@ -44,7 +42,7 @@ namespace Oficina.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message + "Erro ao adicionar os dados do aluno. ");
+                throw new Exception(ex.Message + "Erro ao adicionar os dados do cliente. ");
             }
 
         }
@@ -61,7 +59,7 @@ namespace Oficina.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message + "Erro ao editar os dados deste aluno" +
+                throw new Exception(ex.Message + "Erro ao editar os dados deste cliente" +
                     ". ");
             }
         }
@@ -76,13 +74,21 @@ namespace Oficina.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message + "Erro ao excluir os dados do aluno. ");
+                throw new Exception(ex.Message + "Erro ao excluir os dados do cliente. ");
             }
         }
         public DataTable Select()
         {
             bd.Conectar();
             DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_cliente"));
+            bd.Desconectar();
+            return dt;
+        }
+
+        public DataTable SelectNameCpf()
+        {
+            bd.Conectar();
+            DataTable dt = bd.RetDataTable(String.Format("SELECT ID, nome, cpf FROM tb_cliente"));
             bd.Desconectar();
             return dt;
         }

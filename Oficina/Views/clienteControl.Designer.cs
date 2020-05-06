@@ -40,18 +40,18 @@
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
             this.lblComplemento = new System.Windows.Forms.Label();
-            this.txtNome = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtCpf = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtEstado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtCidade = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtComplemento = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtNumero = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtBairro = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtRua = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.dgvClientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.btnCadastrar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEditar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnExcluir = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.txtRua = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,159 +131,6 @@
             this.lblComplemento.Size = new System.Drawing.Size(93, 13);
             this.lblComplemento.TabIndex = 32;
             this.lblComplemento.Text = "COMPLEMENTO:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNome.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNome.HintForeColor = System.Drawing.Color.Empty;
-            this.txtNome.HintText = "";
-            this.txtNome.isPassword = false;
-            this.txtNome.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtNome.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtNome.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtNome.LineThickness = 3;
-            this.txtNome.Location = new System.Drawing.Point(73, 14);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(209, 21);
-            this.txtNome.TabIndex = 34;
-            this.txtNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCpf.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtCpf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCpf.HintForeColor = System.Drawing.Color.Empty;
-            this.txtCpf.HintText = "";
-            this.txtCpf.isPassword = false;
-            this.txtCpf.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtCpf.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtCpf.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtCpf.LineThickness = 3;
-            this.txtCpf.Location = new System.Drawing.Point(73, 66);
-            this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(209, 21);
-            this.txtCpf.TabIndex = 35;
-            this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEstado.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEstado.HintForeColor = System.Drawing.Color.Empty;
-            this.txtEstado.HintText = "";
-            this.txtEstado.isPassword = false;
-            this.txtEstado.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtEstado.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtEstado.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtEstado.LineThickness = 3;
-            this.txtEstado.Location = new System.Drawing.Point(73, 119);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(209, 21);
-            this.txtEstado.TabIndex = 36;
-            this.txtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCidade.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtCidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCidade.HintForeColor = System.Drawing.Color.Empty;
-            this.txtCidade.HintText = "";
-            this.txtCidade.isPassword = false;
-            this.txtCidade.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtCidade.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtCidade.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtCidade.LineThickness = 3;
-            this.txtCidade.Location = new System.Drawing.Point(73, 173);
-            this.txtCidade.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(209, 21);
-            this.txtCidade.TabIndex = 37;
-            this.txtCidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtComplemento.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtComplemento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtComplemento.HintForeColor = System.Drawing.Color.Empty;
-            this.txtComplemento.HintText = "";
-            this.txtComplemento.isPassword = false;
-            this.txtComplemento.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtComplemento.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtComplemento.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtComplemento.LineThickness = 3;
-            this.txtComplemento.Location = new System.Drawing.Point(469, 173);
-            this.txtComplemento.Margin = new System.Windows.Forms.Padding(4);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(222, 21);
-            this.txtComplemento.TabIndex = 38;
-            this.txtComplemento.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNumero.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNumero.HintForeColor = System.Drawing.Color.Empty;
-            this.txtNumero.HintText = "";
-            this.txtNumero.isPassword = false;
-            this.txtNumero.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtNumero.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtNumero.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtNumero.LineThickness = 3;
-            this.txtNumero.Location = new System.Drawing.Point(465, 119);
-            this.txtNumero.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(222, 21);
-            this.txtNumero.TabIndex = 39;
-            this.txtNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
-            // 
-            // txtBairro
-            // 
-            this.txtBairro.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBairro.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtBairro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBairro.HintForeColor = System.Drawing.Color.Empty;
-            this.txtBairro.HintText = "";
-            this.txtBairro.isPassword = false;
-            this.txtBairro.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtBairro.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtBairro.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtBairro.LineThickness = 3;
-            this.txtBairro.Location = new System.Drawing.Point(469, 14);
-            this.txtBairro.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(218, 21);
-            this.txtBairro.TabIndex = 40;
-            this.txtBairro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtRua
-            // 
-            this.txtRua.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRua.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtRua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtRua.HintForeColor = System.Drawing.Color.Empty;
-            this.txtRua.HintText = "";
-            this.txtRua.isPassword = false;
-            this.txtRua.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtRua.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtRua.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            this.txtRua.LineThickness = 3;
-            this.txtRua.Location = new System.Drawing.Point(465, 66);
-            this.txtRua.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(222, 21);
-            this.txtRua.TabIndex = 41;
-            this.txtRua.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // dgvClientes
             // 
@@ -425,22 +272,79 @@
             this.btnExcluir.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(72, 13);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(209, 20);
+            this.txtNome.TabIndex = 46;
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(73, 65);
+            this.txtCpf.Mask = "000.000.000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(85, 20);
+            this.txtCpf.TabIndex = 48;
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(72, 120);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(209, 20);
+            this.txtEstado.TabIndex = 49;
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Location = new System.Drawing.Point(73, 170);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(209, 20);
+            this.txtCidade.TabIndex = 50;
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Location = new System.Drawing.Point(465, 11);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(209, 20);
+            this.txtBairro.TabIndex = 51;
+            // 
+            // txtRua
+            // 
+            this.txtRua.Location = new System.Drawing.Point(465, 66);
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(209, 20);
+            this.txtRua.TabIndex = 52;
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(465, 120);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(209, 20);
+            this.txtNumero.TabIndex = 53;
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Location = new System.Drawing.Point(465, 170);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(209, 20);
+            this.txtComplemento.TabIndex = 54;
+            // 
             // clienteControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.txtComplemento);
+            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtRua);
             this.Controls.Add(this.txtBairro);
-            this.Controls.Add(this.txtNumero);
-            this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.lblComplemento);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblRua);
@@ -466,17 +370,17 @@
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Label lblComplemento;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtNome;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtCpf;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtEstado;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtCidade;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtComplemento;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtNumero;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtBairro;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtRua;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvClientes;
         private Bunifu.Framework.UI.BunifuFlatButton btnCadastrar;
         private Bunifu.Framework.UI.BunifuFlatButton btnEditar;
         private Bunifu.Framework.UI.BunifuFlatButton btnExcluir;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.MaskedTextBox txtCpf;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.TextBox txtBairro;
+        private System.Windows.Forms.TextBox txtRua;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.TextBox txtComplemento;
     }
 }
