@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOficina));
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panelSide = new System.Windows.Forms.Panel();
@@ -36,12 +37,13 @@
             this.btnCarro = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCliente = new Bunifu.Framework.UI.BunifuFlatButton();
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.bemVindoControl1 = new Oficina.Views.bemVindoControl();
             this.pagamentoControl = new Oficina.Views.pagamentoControl();
             this.orcamentoControl = new Oficina.Views.orcamentoControl();
             this.clienteControl = new Oficina.Views.clienteControl();
             this.carroControl = new Oficina.Views.carroControl();
-            this.bemVindoControl1 = new Oficina.Views.bemVindoControl();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.sidePanel.SuspendLayout();
             this.headerPanel.SuspendLayout();
             this.SuspendLayout();
@@ -217,6 +219,28 @@
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(707, 22);
             this.headerPanel.TabIndex = 1;
+            this.headerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.headerPanel_MouseMove);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel2.Location = new System.Drawing.Point(675, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(32, 22);
+            this.panel2.TabIndex = 49;
+            this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            // 
+            // bemVindoControl1
+            // 
+            this.bemVindoControl1.Location = new System.Drawing.Point(170, 22);
+            this.bemVindoControl1.Name = "bemVindoControl1";
+            this.bemVindoControl1.Size = new System.Drawing.Size(707, 497);
+            this.bemVindoControl1.TabIndex = 6;
             // 
             // pagamentoControl
             // 
@@ -246,37 +270,22 @@
             this.carroControl.Size = new System.Drawing.Size(707, 497);
             this.carroControl.TabIndex = 2;
             // 
-            // bemVindoControl1
+            // bunifuElipse1
             // 
-            this.bemVindoControl1.Location = new System.Drawing.Point(170, 22);
-            this.bemVindoControl1.Name = "bemVindoControl1";
-            this.bemVindoControl1.Size = new System.Drawing.Size(707, 497);
-            this.bemVindoControl1.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(675, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(32, 22);
-            this.panel2.TabIndex = 49;
-            this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            this.bunifuElipse1.ElipseRadius = 15;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // FormOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 519);
+            this.Controls.Add(this.headerPanel);
             this.Controls.Add(this.bemVindoControl1);
             this.Controls.Add(this.pagamentoControl);
             this.Controls.Add(this.orcamentoControl);
             this.Controls.Add(this.clienteControl);
             this.Controls.Add(this.carroControl);
-            this.Controls.Add(this.headerPanel);
             this.Controls.Add(this.sidePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormOficina";
@@ -303,6 +312,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnOrcamento;
         private Views.bemVindoControl bemVindoControl1;
         private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
 

@@ -307,4 +307,18 @@
         Vu+NkQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="pnlPesquisa.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5AUGFjkXOXb0JwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFcSURBVDhP
+        rZK9SsRAFIUjdpIZQazsfQFfQHwCOwXR1spCOxslM0Fwa/9eQBvBQvMAFgpWdoqVlsKqZGa73Sbx3MzB
+        DWTNIvjBZXPP3nvmzk9Uxxm17KzKEF3EAPHmrT7rpXqeJaN5T+amUHyFKBBZbvUWYs2l8Z636kXM8LvJ
+        8iZs/nI2XqT0Q3kZTTqjEzH3Jl6lPIRjY+Vmcx1v9Cnqup+dWUUpAFH2nDH9lV6iZ1DXxzQblAIQP2TP
+        TFvBtHcwOGYaEFcYrDNtBbU3ONhzpgGIr9j/PtNWUPucG3XINCD3LFclp01pJD6ZXoBB6Uy8RCkgjwR/
+        DOSqKDWo3kkaP3qjHsoymqA8RB4JTApMcyKnTbmiWhnNsjrqDig38TZeQZE84T7iHnGNeEKUsrI047tw
+        qd5hSxN5JHLPONQjGF7kVnXqe5bmsSbjcFZvy1Qw36X0d/5nkspE3X4D0WXIc6tBoggAAAAASUVORK5C
+        YII=
+</value>
+  </data>
 </root>

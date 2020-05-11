@@ -48,7 +48,7 @@ namespace Oficina.Views
 
         private void carroControl_Load(object sender, EventArgs e)
         {
-
+            txtKm.MaxLength = 6;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -60,15 +60,23 @@ namespace Oficina.Views
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             GetData();
-            if (carro.Insert())
+            if (!String.IsNullOrEmpty(lblClienteSelecionado.Text))
             {
-                MessageBox.Show("Carro cadastrado!");
-                dgvCarro.DataSource = carro.Select();
+                if (carro.Insert())
+                {
+                    MessageBox.Show("Carro cadastrado!");
+                    dgvCarro.DataSource = carro.Select();
+                }
+                else
+                {
+                    MessageBox.Show("Erro!");
+                }
             }
             else
             {
-                MessageBox.Show("Erro!");
+                MessageBox.Show("É necessário selecionar um cliente.");
             }
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -129,6 +137,11 @@ namespace Oficina.Views
                 txtKm.Text = dgvCarro.Rows[e.RowIndex].Cells["quilometragem"].Value.ToString();
                 lblClienteSelecionado.Text = dgvCarro.Rows[e.RowIndex].Cells["cliente_ID"].Value.ToString();
             }
+        }
+
+        private void txtKm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

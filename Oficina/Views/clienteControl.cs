@@ -108,5 +108,15 @@ namespace Oficina.Views
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void clienteControl_Load(object sender, EventArgs e)
+        {
+            txtNumero.MaxLength = 5;
+        }
+
+        private void txtNumero_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }
