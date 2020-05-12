@@ -35,6 +35,30 @@ namespace Oficina.Views
             cliente.Complemento = txtComplemento.Text;
         }
 
+        private void CleanText()
+        {
+            txtNome.Text = "";
+            txtCpf.Text = "";
+            txtEstado.Text = "";
+            txtCidade.Text = "";
+            txtBairro.Text = "";
+            txtRua.Text = "";
+            txtNumero.Text = "";
+            txtComplemento.Text = "";
+        }
+
+        private bool verifyCodCliente()
+        {
+            if (codClienteClicado == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void ReturnCustomers()
         {
             dgvClientes.DataSource = cliente.Select();
@@ -69,6 +93,7 @@ namespace Oficina.Views
             {
                 MessageBox.Show("Cliente cadastrado!");
                 dgvClientes.DataSource = cliente.Select();
+                CleanText();
             }
             else
             {
@@ -78,11 +103,18 @@ namespace Oficina.Views
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (!verifyCodCliente())
+            {
+                MessageBox.Show("É necessário selecionar um cliente");
+                return;
+            }
+
             GetData();
             if (cliente.Update(codClienteClicado))
             {
                 MessageBox.Show("Cliente Editado!");
                 dgvClientes.DataSource = cliente.Select();
+                CleanText();
             }
             else
             {
@@ -92,16 +124,31 @@ namespace Oficina.Views
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            GetData();
-            if (cliente.Delete(codClienteClicado))
+            if(!verifyCodCliente())
             {
-                MessageBox.Show("Cliente Excluido!");
-                dgvClientes.DataSource = cliente.Select();
+                MessageBox.Show("É necessário selecionar um cliente");
+                return;
+            }
+
+            if(cliente.VerifyCar(codClienteClicado).Rows.Count == 0)
+            {
+                GetData();
+                if (cliente.Delete(codClienteClicado))
+                {
+                    MessageBox.Show("Cliente Excluido!");
+                    dgvClientes.DataSource = cliente.Select();
+                    CleanText();
+                }
+                else
+                {
+                    MessageBox.Show("Erro!");
+                }
             }
             else
             {
-                MessageBox.Show("Erro!");
+                MessageBox.Show("Há um carro cadastrado para este cliente, remova o carro para remover o cliente.");
             }
+
         }
 
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)

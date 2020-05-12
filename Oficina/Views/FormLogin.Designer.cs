@@ -192,6 +192,7 @@
             this.lblEsqueceuSenhaClick.Size = new System.Drawing.Size(71, 15);
             this.lblEsqueceuSenhaClick.TabIndex = 49;
             this.lblEsqueceuSenhaClick.Text = "Venha aqui!";
+            this.lblEsqueceuSenhaClick.Click += new System.EventHandler(this.lblEsqueceuSenhaClick_Click);
             // 
             // FormLogin
             // 

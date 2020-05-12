@@ -56,11 +56,6 @@ namespace Oficina.Views
             txtSenha.UseSystemPasswordChar = true;
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            this.Close();
-        }
-
         private void panel2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -89,6 +84,14 @@ namespace Oficina.Views
             {
                 btnEntrar_Click(sender, e);
             }
+        }
+
+        private void lblEsqueceuSenhaClick_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormSenha form = new FormSenha();
+            form.ShowDialog();
+            this.Close();
         }
     }
 }

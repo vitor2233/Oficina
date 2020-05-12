@@ -92,5 +92,13 @@ namespace Oficina.Controllers
             bd.Desconectar();
             return dt;
         }
+
+        public DataTable VerifyCar(int codCliente)
+        {
+            bd.Conectar();
+            DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_carro WHERE cliente_ID = {0}", codCliente));
+            bd.Desconectar();
+            return dt;
+        }
     }
 }

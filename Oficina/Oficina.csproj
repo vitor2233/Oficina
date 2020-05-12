@@ -88,6 +88,12 @@
     <Compile Include="Views\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormSenha.Designer.cs">
+      <DependentUpon>FormSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\orcamentoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormSenha.resx">
+      <DependentUpon>FormSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\orcamentoControl.resx">
       <DependentUpon>orcamentoControl.cs</DependentUpon>

@@ -24,5 +24,23 @@ namespace Oficina.Controllers
             bd.Desconectar();
             return dt;
         }
+
+        public int VerifyLogin(string email)
+        {
+            bd.Conectar();
+            DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_userAdm WHERE email = '{0}'", email));
+            bd.Desconectar();
+            int linha = (dt.Rows.Count > 0) ? 1 : 0;
+            return linha;
+        }
+
+        public DataTable RetPassword(string email)
+        {
+            bd.Conectar();
+            DataTable dt = bd.RetDataTable(String.Format("SELECT senha FROM tb_userAdm WHERE email = '{0}'", email));
+            bd.Desconectar();
+
+            return dt;
+        }
     }
 }
