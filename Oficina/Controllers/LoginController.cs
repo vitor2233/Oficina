@@ -12,7 +12,7 @@ namespace Oficina.Controllers
         public int ID { get; set; }
 
         public string Email { get; set; }
-
+        // Douglas é gay
         public string Senha { get; set; }
         //ola mundo
         AcessoController bd = new AcessoController();
