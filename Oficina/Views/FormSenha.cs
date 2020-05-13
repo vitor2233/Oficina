@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,15 @@ namespace Oficina.Views
 {
     public partial class FormSenha : Form
     {
+        //Mover form
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         LoginController login = new LoginController();
         public FormSenha()
         {
@@ -33,6 +43,13 @@ namespace Oficina.Views
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            if (!txtEmail.Text.Contains('@') || !txtEmail.Text.Contains('.'))
+            {
+                MessageBox.Show("Por favor, entre com um email válido", "Email inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Text = "";
+                return;
+            }
+
             if (login.VerifyLogin(txtEmail.Text) > 0)
             {
                 //Mandar email
@@ -80,6 +97,15 @@ namespace Oficina.Views
             FormLogin form = new FormLogin();
             form.ShowDialog();
             this.Close();
+        }
+
+        private void headerPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }

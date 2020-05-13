@@ -92,11 +92,26 @@ namespace Oficina.Controllers
             bd.Desconectar();
             return dt;
         }
+        public DataTable SelectNameCpf(string searchText)
+        {
+            bd.Conectar();
+            DataTable dt = bd.RetDataTable(String.Format("SELECT ID, nome, cpf FROM tb_cliente WHERE nome LIKE '%{0}%'", searchText));
+            bd.Desconectar();
+            return dt;
+        }
 
         public DataTable VerifyCar(int codCliente)
         {
             bd.Conectar();
             DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_carro WHERE cliente_ID = {0}", codCliente));
+            bd.Desconectar();
+            return dt;
+        }
+
+        public DataTable Select(string searchText)
+        {
+            bd.Conectar();
+            DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_cliente WHERE nome LIKE '%{0}%'", searchText));
             bd.Desconectar();
             return dt;
         }

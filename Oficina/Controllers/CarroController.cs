@@ -79,5 +79,13 @@ namespace Oficina.Controllers
             bd.Desconectar();
             return dt;
         }
+
+        public DataTable Select(string searchText)
+        {
+            bd.Conectar();
+            DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_carro WHERE modelo LIKE '%{0}%'", searchText));
+            bd.Desconectar();
+            return dt;
+        }
     }
 }

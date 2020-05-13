@@ -26,15 +26,29 @@ namespace Oficina.Views
 
         private void ReturnCustomers()
         {
+            dgvCliente.RowHeadersVisible = false;
             dgvCliente.DataSource = cliente.SelectNameCpf();
             dgvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         private void ReturnCars()
         {
+            dgvCarro.RowHeadersVisible = false;
             dgvCarro.DataSource = carro.Select();
             dgvCarro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
-
+        private bool VerifyText()
+        {
+            if (String.IsNullOrEmpty(txtMarca.Text) || String.IsNullOrEmpty(txtPlaca.Text)
+                || String.IsNullOrEmpty(txtModelo.Text) || String.IsNullOrEmpty(txtChassi.Text)
+                || String.IsNullOrEmpty(txtKm.Text) || String.IsNullOrEmpty(lblClienteSelecionado.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void GetData()
         {
             //Pegar as informações para a inserção
@@ -59,18 +73,26 @@ namespace Oficina.Views
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            GetData();
             if (!String.IsNullOrEmpty(lblClienteSelecionado.Text))
             {
-                if (carro.Insert())
+                if (VerifyText())
                 {
-                    MessageBox.Show("Carro cadastrado!");
-                    dgvCarro.DataSource = carro.Select();
+                    GetData();
+                    if (carro.Insert())
+                    {
+                        MessageBox.Show("Carro cadastrado!");
+                        dgvCarro.DataSource = carro.Select();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erro!");
+                    MessageBox.Show("É necessário preencher todos os dados.");
                 }
+
             }
             else
             {
@@ -81,30 +103,45 @@ namespace Oficina.Views
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            GetData();
-            if (carro.Update(codCarroClicado))
+            if (VerifyText())
             {
-                MessageBox.Show("Carro Editado!");
-                dgvCarro.DataSource = carro.Select();
+                GetData();
+                if (carro.Update(codCarroClicado))
+                {
+                    MessageBox.Show("Carro Editado!");
+                    dgvCarro.DataSource = carro.Select();
+                }
+                else
+                {
+                    MessageBox.Show("Erro!");
+                }
             }
             else
             {
-                MessageBox.Show("Erro!");
+                MessageBox.Show("É necessário preencher todos os dados.");
             }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             GetData();
-            if (carro.Delete(codCarroClicado))
+            if(codCarroClicado != 0)
             {
-                MessageBox.Show("Carro Excluido!");
-                dgvCarro.DataSource = carro.Select();
+                if (carro.Delete(codCarroClicado))
+                {
+                    MessageBox.Show("Carro Excluido!");
+                    dgvCarro.DataSource = carro.Select();
+                }
+                else
+                {
+                    MessageBox.Show("Erro!");
+                }
             }
             else
             {
-                MessageBox.Show("Erro!");
+                MessageBox.Show("Nenhum carro selecionado.");
             }
+
         }
 
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -142,6 +179,16 @@ namespace Oficina.Views
         private void txtKm_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtPesquisaCarro_TextChanged(object sender, EventArgs e)
+        {
+            dgvCarro.DataSource = carro.Select(txtPesquisaCarro.Text);
+        }
+
+        private void txtPesquisaCliente_TextChanged(object sender, EventArgs e)
+        {
+            dgvCliente.DataSource = cliente.SelectNameCpf(txtPesquisaCliente.Text);
         }
     }
 }

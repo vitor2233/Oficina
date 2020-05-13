@@ -34,7 +34,6 @@ namespace Oficina.Views
             cliente.Numero = int.Parse(txtNumero.Text);
             cliente.Complemento = txtComplemento.Text;
         }
-
         private void CleanText()
         {
             txtNome.Text = "";
@@ -46,7 +45,6 @@ namespace Oficina.Views
             txtNumero.Text = "";
             txtComplemento.Text = "";
         }
-
         private bool verifyCodCliente()
         {
             if (codClienteClicado == 0)
@@ -58,9 +56,24 @@ namespace Oficina.Views
                 return true;
             }
         }
+        private bool VerifyText()
+        {
+            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(txtCpf.Text)
+                || String.IsNullOrEmpty(txtEstado.Text) || String.IsNullOrEmpty(txtCidade.Text)
+                || String.IsNullOrEmpty(txtBairro.Text) || String.IsNullOrEmpty(txtRua.Text)
+                || String.IsNullOrEmpty(txtNumero.Text) || String.IsNullOrEmpty(txtComplemento.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         private void ReturnCustomers()
         {
+            dgvClientes.RowHeadersVisible = false;
             dgvClientes.DataSource = cliente.Select();
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
@@ -88,54 +101,12 @@ namespace Oficina.Views
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            GetData();
-            if (cliente.Insert())
-            {
-                MessageBox.Show("Cliente cadastrado!");
-                dgvClientes.DataSource = cliente.Select();
-                CleanText();
-            }
-            else
-            {
-                MessageBox.Show("Erro!");
-            }
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (!verifyCodCliente())
-            {
-                MessageBox.Show("É necessário selecionar um cliente");
-                return;
-            }
-
-            GetData();
-            if (cliente.Update(codClienteClicado))
-            {
-                MessageBox.Show("Cliente Editado!");
-                dgvClientes.DataSource = cliente.Select();
-                CleanText();
-            }
-            else
-            {
-                MessageBox.Show("Erro!");
-            }
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            if(!verifyCodCliente())
-            {
-                MessageBox.Show("É necessário selecionar um cliente");
-                return;
-            }
-
-            if(cliente.VerifyCar(codClienteClicado).Rows.Count == 0)
+            if (VerifyText())
             {
                 GetData();
-                if (cliente.Delete(codClienteClicado))
+                if (cliente.Insert())
                 {
-                    MessageBox.Show("Cliente Excluido!");
+                    MessageBox.Show("Cliente cadastrado!");
                     dgvClientes.DataSource = cliente.Select();
                     CleanText();
                 }
@@ -146,8 +117,74 @@ namespace Oficina.Views
             }
             else
             {
-                MessageBox.Show("Há um carro cadastrado para este cliente, remova o carro para remover o cliente.");
+                MessageBox.Show("É necessário preencher todos os dados.");
             }
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (!verifyCodCliente())
+            {
+                MessageBox.Show("É necessário selecionar um cliente");
+                return;
+            }
+
+            if (VerifyText())
+            {
+                GetData();
+                if (cliente.Update(codClienteClicado))
+                {
+                    MessageBox.Show("Cliente Editado!");
+                    dgvClientes.DataSource = cliente.Select();
+                    CleanText();
+                }
+                else
+                {
+                    MessageBox.Show("Erro!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("É necessário preencher todos os dados.");
+            }
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if(!verifyCodCliente())
+            {
+                MessageBox.Show("É necessário selecionar um cliente");
+                return;
+            }
+
+            if(codClienteClicado != 0)
+            {
+                if (cliente.VerifyCar(codClienteClicado).Rows.Count == 0)
+                {
+                    GetData();
+                    if (cliente.Delete(codClienteClicado))
+                    {
+                        MessageBox.Show("Cliente Excluido!");
+                        dgvClientes.DataSource = cliente.Select();
+                        CleanText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Há um carro cadastrado para este cliente, remova o carro para remover o cliente.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("É necessário selecionar um cliente");
+            }
+
 
         }
 
@@ -164,6 +201,11 @@ namespace Oficina.Views
         private void txtNumero_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            dgvClientes.DataSource = cliente.Select(txtPesquisa.Text);
         }
     }
 }
