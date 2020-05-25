@@ -56,6 +56,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OrcamentoController.cs" />
     <Compile Include="Controllers\ServicoController.cs" />
+    <Compile Include="Controllers\ValidacaoController.cs" />
     <Compile Include="Views\bemVindoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,11 +95,11 @@
     <Compile Include="Views\FormSenha.Designer.cs">
       <DependentUpon>FormSenha.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\orcamentoControl.cs">
+    <Compile Include="Views\servicoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\orcamentoControl.Designer.cs">
-      <DependentUpon>orcamentoControl.cs</DependentUpon>
+    <Compile Include="Views\servicoControl.Designer.cs">
+      <DependentUpon>servicoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\pagamentoControl.cs">
       <SubType>UserControl</SubType>
@@ -134,8 +135,8 @@
     <EmbeddedResource Include="Views\FormSenha.resx">
       <DependentUpon>FormSenha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\orcamentoControl.resx">
-      <DependentUpon>orcamentoControl.cs</DependentUpon>
+    <EmbeddedResource Include="Views\servicoControl.resx">
+      <DependentUpon>servicoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\pagamentoControl.resx">
       <DependentUpon>pagamentoControl.cs</DependentUpon>

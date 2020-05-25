@@ -17,7 +17,7 @@ namespace Oficina.Controllers
 
         public string Adicional { get; set; }
 
-        public string Carro_ID { get; set; }
+        public int Carro_ID { get; set; }
 
         AcessoController bd = new AcessoController();
 
@@ -80,6 +80,14 @@ namespace Oficina.Controllers
         {
             bd.Conectar();
             DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_servico WHERE tipoServico LIKE '%{0}%'", searchText));
+            bd.Desconectar();
+            return dt;
+        }
+
+        public DataTable VerificarCarro(int codCarro)
+        {
+            bd.Conectar();
+            DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_servico WHERE carro_ID = {0}", codCarro));
             bd.Desconectar();
             return dt;
         }

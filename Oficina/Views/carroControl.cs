@@ -15,6 +15,7 @@ namespace Oficina.Views
     {
         CarroController carro = new CarroController();
         ClienteController cliente = new ClienteController();
+        ServicoController servico = new ServicoController();
         int codCarroClicado = 0;
         int codClienteClicado = 0;
         public carroControl()
@@ -124,24 +125,30 @@ namespace Oficina.Views
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            GetData();
-            if(codCarroClicado != 0)
+            if (servico.VerificarCarro(codCarroClicado).Rows.Count == 0)
             {
-                if (carro.Delete(codCarroClicado))
+                GetData();
+                if (codCarroClicado != 0)
                 {
-                    MessageBox.Show("Carro Excluido!");
-                    dgvCarro.DataSource = carro.Select();
+                    if (carro.Delete(codCarroClicado))
+                    {
+                        MessageBox.Show("Carro Excluido!");
+                        dgvCarro.DataSource = carro.Select();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erro!");
+                    MessageBox.Show("Nenhum carro selecionado.");
                 }
             }
             else
             {
-                MessageBox.Show("Nenhum carro selecionado.");
+                MessageBox.Show("Há um serviço cadastrado para este carro, remova o serviço para remover o carro.");
             }
-
         }
 
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)

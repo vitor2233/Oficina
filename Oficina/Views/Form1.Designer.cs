@@ -40,7 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.bemVindoControl1 = new Oficina.Views.bemVindoControl();
             this.pagamentoControl = new Oficina.Views.pagamentoControl();
-            this.orcamentoControl = new Oficina.Views.orcamentoControl();
+            this.orcamentoControl = new Oficina.Views.servicoControl();
             this.clienteControl = new Oficina.Views.clienteControl();
             this.carroControl = new Oficina.Views.carroControl();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -304,7 +304,7 @@
         private System.Windows.Forms.Panel headerPanel;
         private Views.carroControl carroControl;
         private Views.clienteControl clienteControl;
-        private Views.orcamentoControl orcamentoControl;
+        private Views.servicoControl orcamentoControl;
         private Views.pagamentoControl pagamentoControl;
         private System.Windows.Forms.Panel panelSide;
         private Bunifu.Framework.UI.BunifuFlatButton btnCliente;

@@ -14,6 +14,7 @@ namespace Oficina.Views
     public partial class clienteControl : UserControl
     {
         ClienteController cliente = new ClienteController();
+        ValidacaoController valida = new ValidacaoController();
         int codClienteClicado = 0;
 
         public clienteControl()
@@ -101,54 +102,71 @@ namespace Oficina.Views
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (VerifyText())
+            if (valida.IsCpf(txtCpf.Text))
             {
-                GetData();
-                if (cliente.Insert())
+                if (VerifyText())
                 {
-                    MessageBox.Show("Cliente cadastrado!");
-                    dgvClientes.DataSource = cliente.Select();
-                    CleanText();
+                    GetData();
+                    if (cliente.Insert())
+                    {
+                        MessageBox.Show("Cliente cadastrado!");
+                        dgvClientes.DataSource = cliente.Select();
+                        CleanText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erro!");
+                    MessageBox.Show("É necessário preencher todos os dados.");
                 }
             }
             else
             {
-                MessageBox.Show("É necessário preencher todos os dados.");
+                MessageBox.Show("CPF inválido.");
+                txtCpf.Text = "";
             }
+
+
 
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (!verifyCodCliente())
+            if (valida.IsCpf(txtCpf.Text))
             {
-                MessageBox.Show("É necessário selecionar um cliente");
-                return;
-            }
-
-            if (VerifyText())
-            {
-                GetData();
-                if (cliente.Update(codClienteClicado))
+                if (!verifyCodCliente())
                 {
-                    MessageBox.Show("Cliente Editado!");
-                    dgvClientes.DataSource = cliente.Select();
-                    CleanText();
+                    MessageBox.Show("É necessário selecionar um cliente");
+                    return;
+                }
+
+                if (VerifyText())
+                {
+                    GetData();
+                    if (cliente.Update(codClienteClicado))
+                    {
+                        MessageBox.Show("Cliente Editado!");
+                        dgvClientes.DataSource = cliente.Select();
+                        CleanText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erro!");
+                    MessageBox.Show("É necessário preencher todos os dados.");
                 }
             }
             else
             {
-                MessageBox.Show("É necessário preencher todos os dados.");
+                MessageBox.Show("CPF inválido.");
+                txtCpf.Text = "";
             }
-
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
