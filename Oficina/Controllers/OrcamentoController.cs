@@ -15,7 +15,7 @@ namespace Oficina.Controllers
 
         public string Descricao { get; set; }
 
-        public int ValorPagamento { get; set; }
+        public string ValorPagamento { get; set; }
 
         public string DataPagamento { get; set; }
 
@@ -28,7 +28,7 @@ namespace Oficina.Controllers
             try
             {
                 bd.Conectar();
-                bd.ExecutarComandosSql(String.Format("INSERT INTO tb_orcamento (tipoPagamento, descricao, valorPagamento, dataPagamento, servico_ID) VALUES ('{0}','{1}',{2},'{3}',{4})",
+                bd.ExecutarComandosSql(String.Format("INSERT INTO tb_orcamento (tipoPagamento, descricao, valorPagamento, dataPagamento, servico_ID) VALUES ('{0}','{1}','{2}','{3}',{4})",
                     TipoPagamento, Descricao, ValorPagamento, DataPagamento, Servico_ID));
                 bd.Desconectar();
                 return true;
@@ -44,8 +44,8 @@ namespace Oficina.Controllers
             try
             {
                 bd.Conectar();
-                bd.ExecutarComandosSql(String.Format("UPDATE tb_orcamento SET tipoPagamento = '{0}', descricao = '{1}', valorPagamento = {2}, dataPagamento = '{3}', servico_ID = {4}" +
-                    " WHERE ID = {4} ", TipoPagamento, Descricao, ValorPagamento, DataPagamento, codOrcamentoClicado));
+                bd.ExecutarComandosSql(String.Format("UPDATE tb_orcamento SET tipoPagamento = '{0}', descricao = '{1}', valorPagamento = '{2}', dataPagamento = '{3}', servico_ID = {4}" +
+                    " WHERE ID = {5} ", TipoPagamento, Descricao, ValorPagamento, DataPagamento, Servico_ID, codOrcamentoClicado));
 
                 bd.Desconectar();
                 return true;
