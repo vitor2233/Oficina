@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oficina.Controllers;
+using System.Globalization;
 
 namespace Oficina.Views
 {
@@ -27,12 +28,14 @@ namespace Oficina.Views
 
         private void RetornarServicos()
         {
+            dgvServico.ReadOnly = true;
             dgvServico.RowHeadersVisible = false;
             dgvServico.DataSource = servico.Select();
             dgvServico.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         private void RetornarPagamentos()
         {
+            dgvPagamento.ReadOnly = true;
             dgvPagamento.RowHeadersVisible = false;
             dgvPagamento.DataSource = orcamento.Select();
             dgvPagamento.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -72,28 +75,38 @@ namespace Oficina.Views
         {
             Double value;
             if (Double.TryParse(txtValor.Text, out value))
-                txtValor.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", value);
+                txtValor.Text = String.Format(CultureInfo.CurrentCulture, "{0:C2}", value);
             else
                 txtValor.Text = String.Empty;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+
             if (!String.IsNullOrEmpty(lblServicoSelecionado.Text))
             {
                 if (VerifyText())
                 {
                     GetData();
-                    if (orcamento.Insert())
+                    codServicoClicado = int.Parse(lblServicoSelecionado.Text);
+                    if (orcamento.VerificarServico(codServicoClicado).Rows.Count == 0)
                     {
-                        MessageBox.Show("Pagamento cadastrado!");
-                        dgvPagamento.DataSource = orcamento.Select();
-                        CleanText();
+                        if (orcamento.Insert())
+                        {
+                            MessageBox.Show("Pagamento cadastrado!");
+                            dgvPagamento.DataSource = orcamento.Select();
+                            CleanText();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro!");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Erro!");
+                        MessageBox.Show("Já existe um pagamento cadastrado para este serviço");
                     }
+
                 }
                 else
                 {
@@ -131,24 +144,32 @@ namespace Oficina.Views
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            GetData();
-            if (codPagamentoClicado != 0)
+            if (VerifyText())
             {
-                if (orcamento.Delete(codPagamentoClicado))
+                GetData();
+                if (codPagamentoClicado != 0)
                 {
-                    MessageBox.Show("Pagamento Excluido!");
-                    dgvPagamento.DataSource = orcamento.Select();
-                    CleanText();
+                    if (orcamento.Delete(codPagamentoClicado))
+                    {
+                        MessageBox.Show("Pagamento Excluido!");
+                        dgvPagamento.DataSource = orcamento.Select();
+                        CleanText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erro!");
+                    MessageBox.Show("Nenhum pagamento selecionado.");
                 }
             }
             else
             {
-                MessageBox.Show("Nenhum pagamento selecionado.");
+                MessageBox.Show("Nenhum pagamento selecionado");
             }
+
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -186,6 +207,41 @@ namespace Oficina.Views
                 rtbDescricao.Text = dgvPagamento.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
                 lblServicoSelecionado.Text = dgvPagamento.Rows[e.RowIndex].Cells["servico_ID"].Value.ToString();
             }
+        }
+
+        private void txtPesquisaServico_TextChanged(object sender, EventArgs e)
+        {
+            dgvServico.DataSource = servico.Select(txtPesquisaServico.Text);
+        }
+
+        private void txtPesquisaPagamento_TextChanged(object sender, EventArgs e)
+        {
+            dgvPagamento.DataSource = orcamento.Select(txtPesquisaPagamento.Text);
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void mskData_Leave(object sender, EventArgs e)
+        {
+            DateTime currentDate = DateTime.Today;
+            DateTime Test;
+            if (DateTime.TryParseExact(mskData.Text, "dd/MM/yyyy", null, DateTimeStyles.None, out Test) == false)
+            {
+                mskData.Text = "";
+                return;
+            }
+                
+
+            if (Convert.ToDateTime(mskData.Text) > currentDate)
+                mskData.Text = "";
+        }
+
+        private void pagamentoControl_Load(object sender, EventArgs e)
+        {
+            txtValor.MaxLength = 9;
         }
     }
 }

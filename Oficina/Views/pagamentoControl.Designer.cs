@@ -62,7 +62,7 @@
             this.rtbDescricao.Location = new System.Drawing.Point(283, 63);
             this.rtbDescricao.Name = "rtbDescricao";
             this.rtbDescricao.Size = new System.Drawing.Size(415, 99);
-            this.rtbDescricao.TabIndex = 105;
+            this.rtbDescricao.TabIndex = 4;
             this.rtbDescricao.Text = "";
             // 
             // lblDescricao
@@ -81,6 +81,7 @@
             this.txtPesquisaPagamento.Name = "txtPesquisaPagamento";
             this.txtPesquisaPagamento.Size = new System.Drawing.Size(104, 20);
             this.txtPesquisaPagamento.TabIndex = 103;
+            this.txtPesquisaPagamento.TextChanged += new System.EventHandler(this.txtPesquisaPagamento_TextChanged);
             // 
             // txtPesquisaServico
             // 
@@ -88,6 +89,7 @@
             this.txtPesquisaServico.Name = "txtPesquisaServico";
             this.txtPesquisaServico.Size = new System.Drawing.Size(104, 20);
             this.txtPesquisaServico.TabIndex = 102;
+            this.txtPesquisaServico.TextChanged += new System.EventHandler(this.txtPesquisaServico_TextChanged);
             // 
             // btnRefresh
             // 
@@ -209,7 +211,7 @@
             this.btnExcluir.OnHoverTextColor = System.Drawing.Color.White;
             this.btnExcluir.selected = false;
             this.btnExcluir.Size = new System.Drawing.Size(149, 48);
-            this.btnExcluir.TabIndex = 95;
+            this.btnExcluir.TabIndex = 7;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcluir.Textcolor = System.Drawing.Color.White;
@@ -245,7 +247,7 @@
             this.btnEditar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEditar.selected = false;
             this.btnEditar.Size = new System.Drawing.Size(149, 48);
-            this.btnEditar.TabIndex = 94;
+            this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Textcolor = System.Drawing.Color.White;
@@ -280,7 +282,7 @@
             this.btnCadastrar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCadastrar.selected = false;
             this.btnCadastrar.Size = new System.Drawing.Size(149, 48);
-            this.btnCadastrar.TabIndex = 93;
+            this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrar.Textcolor = System.Drawing.Color.White;
@@ -322,8 +324,9 @@
             this.mskData.Mask = "00/00/0000";
             this.mskData.Name = "mskData";
             this.mskData.Size = new System.Drawing.Size(98, 20);
-            this.mskData.TabIndex = 107;
+            this.mskData.TabIndex = 3;
             this.mskData.ValidatingType = typeof(System.DateTime);
+            this.mskData.Leave += new System.EventHandler(this.mskData_Leave);
             // 
             // label1
             // 
@@ -340,11 +343,13 @@
             this.txtValor.Location = new System.Drawing.Point(23, 116);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(98, 20);
-            this.txtValor.TabIndex = 108;
+            this.txtValor.TabIndex = 2;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
             // cbxTipoPagamento
             // 
+            this.cbxTipoPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoPagamento.FormattingEnabled = true;
             this.cbxTipoPagamento.Items.AddRange(new object[] {
             "Crédito",
@@ -353,7 +358,7 @@
             this.cbxTipoPagamento.Location = new System.Drawing.Point(23, 67);
             this.cbxTipoPagamento.Name = "cbxTipoPagamento";
             this.cbxTipoPagamento.Size = new System.Drawing.Size(98, 21);
-            this.cbxTipoPagamento.TabIndex = 109;
+            this.cbxTipoPagamento.TabIndex = 1;
             // 
             // pagamentoControl
             // 
@@ -379,6 +384,7 @@
             this.Controls.Add(this.lblTipoPagamento);
             this.Name = "pagamentoControl";
             this.Size = new System.Drawing.Size(707, 497);
+            this.Load += new System.EventHandler(this.pagamentoControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagamento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).EndInit();
             this.ResumeLayout(false);

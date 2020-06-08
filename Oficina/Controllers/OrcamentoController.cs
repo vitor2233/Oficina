@@ -81,7 +81,15 @@ namespace Oficina.Controllers
         public DataTable Select(string searchText)
         {
             bd.Conectar();
-            DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_orcamento WHERE descricao LIKE '%{0}%'", searchText));
+            DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_orcamento WHERE tipoPagamento LIKE '%{0}%'", searchText));
+            bd.Desconectar();
+            return dt;
+        }
+
+        public DataTable VerificarServico(int codServico)
+        {
+            bd.Conectar();
+            DataTable dt = bd.RetDataTable(String.Format("SELECT * FROM tb_orcamento WHERE servico_ID = {0}", codServico));
             bd.Desconectar();
             return dt;
         }

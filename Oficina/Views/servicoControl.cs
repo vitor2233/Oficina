@@ -15,6 +15,7 @@ namespace Oficina.Views
     {
         CarroController carro = new CarroController();
         ServicoController servico = new ServicoController();
+        OrcamentoController orcamento = new OrcamentoController();
         int codCarroClicado = 0;
         int codServicoClicado = 0;
         public servicoControl()
@@ -26,12 +27,14 @@ namespace Oficina.Views
 
         private void RetornarServicos()
         {
+            dgvServico.ReadOnly = true;
             dgvServico.RowHeadersVisible = false;
             dgvServico.DataSource = servico.Select();
             dgvServico.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         private void RetornarCarros()
         {
+            dgvCarro.ReadOnly = true;
             dgvCarro.RowHeadersVisible = false;
             dgvCarro.DataSource = carro.Select();
             dgvCarro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -121,24 +124,39 @@ namespace Oficina.Views
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            GetData();
-            if (codServicoClicado != 0)
+            if(orcamento.VerificarServico(codServicoClicado).Rows.Count == 0)
             {
-                if (servico.Delete(codServicoClicado))
+                if (VerifyText())
                 {
-                    MessageBox.Show("Serviço Excluido!");
-                    dgvServico.DataSource = servico.Select();
-                    CleanText();
+                    GetData();
+                    if (codServicoClicado != 0)
+                    {
+                        if (servico.Delete(codServicoClicado))
+                        {
+                            MessageBox.Show("Serviço Excluido!");
+                            dgvServico.DataSource = servico.Select();
+                            CleanText();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhum serviço selecionado.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erro!");
+                    MessageBox.Show("Nenhum serviço selecionado");
                 }
             }
             else
             {
-                MessageBox.Show("Nenhum serviço selecionado.");
+                MessageBox.Show("Há um pagamento cadastrado para este serviço, remova o pagamento para remover o serviço.");
             }
+            
         }
 
         private void dgvServico_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -176,10 +194,15 @@ namespace Oficina.Views
             RetornarServicos();
             RetornarCarros();
         }
+        private void txtCaractere_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
 
         private void servicoControl_Load(object sender, EventArgs e)
         {
             rtbAdicional.MaxLength = 255;
+            txtTipoServico.MaxLength = 60;
         }
 
         private void txtPesquisaCarro_TextChanged(object sender, EventArgs e)

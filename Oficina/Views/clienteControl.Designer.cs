@@ -53,7 +53,6 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.pnlPesquisa = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,7 +200,7 @@
             this.btnCadastrar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCadastrar.selected = false;
             this.btnCadastrar.Size = new System.Drawing.Size(149, 48);
-            this.btnCadastrar.TabIndex = 43;
+            this.btnCadastrar.TabIndex = 10;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrar.Textcolor = System.Drawing.Color.White;
@@ -236,7 +235,7 @@
             this.btnEditar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEditar.selected = false;
             this.btnEditar.Size = new System.Drawing.Size(149, 48);
-            this.btnEditar.TabIndex = 44;
+            this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Textcolor = System.Drawing.Color.White;
@@ -271,7 +270,7 @@
             this.btnExcluir.OnHoverTextColor = System.Drawing.Color.White;
             this.btnExcluir.selected = false;
             this.btnExcluir.Size = new System.Drawing.Size(149, 48);
-            this.btnExcluir.TabIndex = 45;
+            this.btnExcluir.TabIndex = 12;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcluir.Textcolor = System.Drawing.Color.White;
@@ -283,7 +282,8 @@
             this.txtNome.Location = new System.Drawing.Point(13, 53);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(209, 20);
-            this.txtNome.TabIndex = 46;
+            this.txtNome.TabIndex = 1;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaractere_KeyPress);
             // 
             // txtCpf
             // 
@@ -291,77 +291,68 @@
             this.txtCpf.Mask = "000.000.000-00";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(85, 20);
-            this.txtCpf.TabIndex = 48;
+            this.txtCpf.TabIndex = 5;
             // 
             // txtEstado
             // 
             this.txtEstado.Location = new System.Drawing.Point(13, 112);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(209, 20);
-            this.txtEstado.TabIndex = 49;
+            this.txtEstado.TabIndex = 2;
+            this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaractere_KeyPress);
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(13, 171);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(209, 20);
-            this.txtCidade.TabIndex = 50;
+            this.txtCidade.TabIndex = 3;
+            this.txtCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaractere_KeyPress);
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(340, 112);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(209, 20);
-            this.txtBairro.TabIndex = 51;
+            this.txtBairro.TabIndex = 7;
+            this.txtBairro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaractere_KeyPress);
             // 
             // txtRua
             // 
             this.txtRua.Location = new System.Drawing.Point(340, 53);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(209, 20);
-            this.txtRua.TabIndex = 52;
+            this.txtRua.TabIndex = 6;
+            this.txtRua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaractere_KeyPress);
             // 
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(558, 53);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(85, 20);
-            this.txtNumero.TabIndex = 53;
-            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress_1);
+            this.txtNumero.TabIndex = 9;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // txtComplemento
             // 
             this.txtComplemento.Location = new System.Drawing.Point(340, 171);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(209, 20);
-            this.txtComplemento.TabIndex = 54;
+            this.txtComplemento.TabIndex = 8;
+            this.txtComplemento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaractere_KeyPress);
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(7, 309);
+            this.txtPesquisa.Location = new System.Drawing.Point(27, 309);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(104, 20);
             this.txtPesquisa.TabIndex = 55;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
-            // pnlPesquisa
-            // 
-            this.pnlPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPesquisa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPesquisa.BackgroundImage")));
-            this.pnlPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlPesquisa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlPesquisa.Location = new System.Drawing.Point(117, 309);
-            this.pnlPesquisa.Name = "pnlPesquisa";
-            this.pnlPesquisa.Size = new System.Drawing.Size(21, 20);
-            this.pnlPesquisa.TabIndex = 64;
-            // 
             // clienteControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlPesquisa);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.txtNumero);
@@ -414,6 +405,5 @@
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.TextBox txtPesquisa;
-        private System.Windows.Forms.Panel pnlPesquisa;
     }
 }

@@ -27,12 +27,14 @@ namespace Oficina.Views
 
         private void ReturnCustomers()
         {
+            dgvCliente.ReadOnly = true;
             dgvCliente.RowHeadersVisible = false;
             dgvCliente.DataSource = cliente.SelectNameCpf();
             dgvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         private void ReturnCars()
         {
+            dgvCarro.ReadOnly = true;
             dgvCarro.RowHeadersVisible = false;
             dgvCarro.DataSource = carro.Select();
             dgvCarro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -64,6 +66,8 @@ namespace Oficina.Views
         private void carroControl_Load(object sender, EventArgs e)
         {
             txtKm.MaxLength = 6;
+            txtMarca.MaxLength = 60;
+            txtModelo.MaxLength = 60;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -186,6 +190,10 @@ namespace Oficina.Views
         private void txtKm_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+        private void txtCaractere_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
         }
 
         private void txtPesquisaCarro_TextChanged(object sender, EventArgs e)

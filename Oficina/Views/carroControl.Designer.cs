@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(carroControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblPlaca = new System.Windows.Forms.Label();
             this.lblModelo = new System.Windows.Forms.Label();
@@ -55,8 +55,6 @@
             this.txtChassi = new System.Windows.Forms.MaskedTextBox();
             this.txtPesquisaCliente = new System.Windows.Forms.TextBox();
             this.txtPesquisaCarro = new System.Windows.Forms.TextBox();
-            this.pnlPesquisaCarro = new System.Windows.Forms.Panel();
-            this.pnlPesquisaCliente = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarro)).BeginInit();
             this.SuspendLayout();
@@ -138,7 +136,7 @@
             this.btnExcluir.OnHoverTextColor = System.Drawing.Color.White;
             this.btnExcluir.selected = false;
             this.btnExcluir.Size = new System.Drawing.Size(149, 48);
-            this.btnExcluir.TabIndex = 48;
+            this.btnExcluir.TabIndex = 8;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcluir.Textcolor = System.Drawing.Color.White;
@@ -174,7 +172,7 @@
             this.btnEditar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEditar.selected = false;
             this.btnEditar.Size = new System.Drawing.Size(149, 48);
-            this.btnEditar.TabIndex = 47;
+            this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Textcolor = System.Drawing.Color.White;
@@ -209,7 +207,7 @@
             this.btnCadastrar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCadastrar.selected = false;
             this.btnCadastrar.Size = new System.Drawing.Size(149, 48);
-            this.btnCadastrar.TabIndex = 46;
+            this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrar.Textcolor = System.Drawing.Color.White;
@@ -218,19 +216,19 @@
             // 
             // dgvCliente
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCliente.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.DoubleBuffered = true;
             this.dgvCliente.EnableHeadersVisualStyles = false;
@@ -239,33 +237,33 @@
             this.dgvCliente.Location = new System.Drawing.Point(7, 335);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCliente.Size = new System.Drawing.Size(149, 159);
             this.dgvCliente.TabIndex = 49;
             this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
             // 
             // dgvCarro
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvCarro.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCarro.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCarro.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvCarro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCarro.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCarro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCarro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCarro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCarro.DoubleBuffered = true;
             this.dgvCarro.EnableHeadersVisualStyles = false;
@@ -274,14 +272,14 @@
             this.dgvCarro.Location = new System.Drawing.Point(202, 335);
             this.dgvCarro.Name = "dgvCarro";
             this.dgvCarro.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCarro.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCarro.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCarro.Size = new System.Drawing.Size(486, 159);
             this.dgvCarro.TabIndex = 50;
             this.dgvCarro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarro_CellClick);
@@ -323,14 +321,15 @@
             this.txtMarca.Location = new System.Drawing.Point(13, 53);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(239, 20);
-            this.txtMarca.TabIndex = 56;
+            this.txtMarca.TabIndex = 1;
+            this.txtMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaractere_KeyPress);
             // 
             // txtKm
             // 
             this.txtKm.Location = new System.Drawing.Point(340, 132);
             this.txtKm.Name = "txtKm";
             this.txtKm.Size = new System.Drawing.Size(241, 20);
-            this.txtKm.TabIndex = 57;
+            this.txtKm.TabIndex = 5;
             this.txtKm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKm_KeyPress);
             // 
             // txtModelo
@@ -338,7 +337,8 @@
             this.txtModelo.Location = new System.Drawing.Point(340, 53);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(241, 20);
-            this.txtModelo.TabIndex = 58;
+            this.txtModelo.TabIndex = 2;
+            this.txtModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaractere_KeyPress);
             // 
             // txtPlaca
             // 
@@ -346,7 +346,7 @@
             this.txtPlaca.Mask = "LLL-0000";
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(57, 20);
-            this.txtPlaca.TabIndex = 59;
+            this.txtPlaca.TabIndex = 3;
             // 
             // txtChassi
             // 
@@ -354,7 +354,7 @@
             this.txtChassi.Mask = "0LL&&&&&L00000000";
             this.txtChassi.Name = "txtChassi";
             this.txtChassi.Size = new System.Drawing.Size(111, 20);
-            this.txtChassi.TabIndex = 60;
+            this.txtChassi.TabIndex = 4;
             // 
             // txtPesquisaCliente
             // 
@@ -372,38 +372,10 @@
             this.txtPesquisaCarro.TabIndex = 62;
             this.txtPesquisaCarro.TextChanged += new System.EventHandler(this.txtPesquisaCarro_TextChanged);
             // 
-            // pnlPesquisaCarro
-            // 
-            this.pnlPesquisaCarro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPesquisaCarro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPesquisaCarro.BackgroundImage")));
-            this.pnlPesquisaCarro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlPesquisaCarro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlPesquisaCarro.Location = new System.Drawing.Point(312, 309);
-            this.pnlPesquisaCarro.Name = "pnlPesquisaCarro";
-            this.pnlPesquisaCarro.Size = new System.Drawing.Size(21, 20);
-            this.pnlPesquisaCarro.TabIndex = 63;
-            // 
-            // pnlPesquisaCliente
-            // 
-            this.pnlPesquisaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPesquisaCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPesquisaCliente.BackgroundImage")));
-            this.pnlPesquisaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlPesquisaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlPesquisaCliente.Location = new System.Drawing.Point(117, 309);
-            this.pnlPesquisaCliente.Name = "pnlPesquisaCliente";
-            this.pnlPesquisaCliente.Size = new System.Drawing.Size(21, 20);
-            this.pnlPesquisaCliente.TabIndex = 64;
-            // 
             // carroControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlPesquisaCliente);
-            this.Controls.Add(this.pnlPesquisaCarro);
             this.Controls.Add(this.txtPesquisaCarro);
             this.Controls.Add(this.txtPesquisaCliente);
             this.Controls.Add(this.txtChassi);
@@ -455,7 +427,5 @@
         private System.Windows.Forms.MaskedTextBox txtChassi;
         private System.Windows.Forms.TextBox txtPesquisaCliente;
         private System.Windows.Forms.TextBox txtPesquisaCarro;
-        private System.Windows.Forms.Panel pnlPesquisaCarro;
-        private System.Windows.Forms.Panel pnlPesquisaCliente;
     }
 }

@@ -74,6 +74,7 @@ namespace Oficina.Views
 
         private void ReturnCustomers()
         {
+            dgvClientes.ReadOnly = true;
             dgvClientes.RowHeadersVisible = false;
             dgvClientes.DataSource = cliente.Select();
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -210,15 +211,20 @@ namespace Oficina.Views
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+        private void txtCaractere_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
 
         private void clienteControl_Load(object sender, EventArgs e)
         {
             txtNumero.MaxLength = 5;
-        }
-
-        private void txtNumero_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            txtNome.MaxLength = 60;
+            txtCidade.MaxLength = 60;
+            txtBairro.MaxLength = 60;
+            txtRua.MaxLength = 60;
+            txtComplemento.MaxLength = 60;
+            txtEstado.MaxLength = 2;
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
